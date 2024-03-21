@@ -63,8 +63,24 @@ func vowelOrConsonant(letter: Character) -> String {
   return "a consonant"
 }
 
+func introMessage() {
+  print();
+  print("Welcome to The Letter Checking Program!");
+  print();
+  print("To use this program, you must first enter how many", terminator: "");
+  print("letters you want to check. If you input erroneous ");
+  print("data, it will count as a letter so be careful!", terminator: "");
+  print("Then, you must enter one letter (only one at a time). ");
+  print("The program will tell you if it is a capital,", terminator: "");
+  print("or lowercase letter, and if it is a vowel or a ");
+  print("consonant. To end the program, enter an asterisk ", terminator: "");
+  print("instead of a letter when prompted.");
+  print();
+}
 
 // main part of program
+introMessage()
+
 do {
   // Getting user input for amount of letters
   let numLetters = try userInputNumLetters()
@@ -106,3 +122,6 @@ do {
 } catch {
   print("Error")
 }
+
+// Exit message
+print("Thank you for using The Letter Checking Program!")
