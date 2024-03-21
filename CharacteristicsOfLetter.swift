@@ -31,7 +31,7 @@ func lowerOrUpper(letter: Character) -> String {
   // Checks if letter is lowercase
   if letter <= "z" && letter >= "a" {
     return "lowercase."
-  
+
   // Checks if letter is uppercase
   } else if letter <= "Z" && letter >= "A"{
     return "uppercase."
@@ -80,7 +80,6 @@ func introMessage() {
 
 // main part of program
 introMessage()
-
 do {
   // Getting user input for amount of letters
   let numLetters = try userInputNumLetters()
@@ -107,7 +106,7 @@ do {
       } else {
         print("Please enter a letter. No other characters accepted.")
       }
-      
+
     // User entered too many chars
     } else {
       print("Please enter only one character.")
