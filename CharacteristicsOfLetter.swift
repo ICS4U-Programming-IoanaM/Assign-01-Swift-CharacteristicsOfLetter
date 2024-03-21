@@ -63,28 +63,46 @@ func vowelOrConsonant(letter: Character) -> String {
   return "a consonant"
 }
 
-// Getting user input
-let letterArray = try userInputLetter()
 
-// Checks if user entered one character
-if letterArray.count == 1 {
-  // Stores chosen letter in variable
-  let letter = letterArray[0]
+// main part of program
+do {
+  // Getting user input for amount of letters
+  let numLetters = try userInputNumLetters()
 
-  // calls functions
-  let letterCase = lowerOrUpper(letter: letter)
-  let letterType = vowelOrConsonant(letter: letter)
+  // Loops according to amount of letters
+  for _ in 0..<numLetters {
+    // Gets user input for letter
+    let letterArray = try userInputLetter()
 
-  // Checks if letter is upper or lowercase and outputs to consol
-  if letterCase != " " {
-    print("Your letter is \(letterType) which is \(letterCase)")
+    // Checks if user entered one character
+    if letterArray.count == 1 {
+      // Stores chosen letter in variable
+      let letter = letterArray[0]
 
-  // The character user entered is not in the alphabet
-  } else {
-    print("Please enter a letter. No other characters accepted.")
+      // calls functions
+      let letterCase = lowerOrUpper(letter: letter)
+      let letterType = vowelOrConsonant(letter: letter)
+
+      // Checks if letter is upper or lowercase and outputs to consol
+      if letterCase != " " {
+        print("Your letter is \(letterType) which is \(letterCase)")
+
+      // The character user entered is not in the alphabet
+      } else {
+        print("Please enter a letter. No other characters accepted.")
+      }
+      
+    // User entered too many chars
+    } else {
+      print("Please enter only one character.")
+    }
   }
-  
-// User entered too many chars
-} else {
-  print("Too many characters. Enter only one character.")
+
+// User entered invalid amount of letters
+} catch InputError.invalidInput {
+  print("That is not a valid amount of letters.")
+
+// Catch any other error
+} catch {
+  print("Error")
 }
