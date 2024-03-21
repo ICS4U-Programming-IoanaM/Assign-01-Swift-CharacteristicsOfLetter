@@ -7,6 +7,7 @@ func userInput() -> Character? {
     return char
 }
 
+
 if let input = userInput() {
     print(input)
 } else {
