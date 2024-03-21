@@ -73,8 +73,7 @@ func introMessage() {
   print("Then, you must enter one letter (only one at a time). ")
   print("The program will tell you if it is a capital,", terminator: "")
   print("or lowercase letter, and if it is a vowel or a ")
-  print("consonant. To end the program, enter an asterisk ", terminator: "")
-  print("instead of a letter when prompted.")
+  print("consonant.")
   print()
 }
 
